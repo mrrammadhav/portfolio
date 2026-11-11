@@ -172,3 +172,10 @@ body .nav.open .links a.active{color:var(--accent)}
 .A-tilt .btn:hover{transform:translateY(-2px) scale(1.03)}
 .A-tilt .chips li:hover{transform:scale(1.08) rotate(-2deg);background:var(--accent);color:var(--on-accent)}
 
+
+.pgroup{font-size:1.35rem;margin:34px 0 16px}
+.pgroup:first-child{margin-top:0}
+.psub{font:600 1.05rem var(--bf);margin:24px 0 12px;color:var(--text)}
+.psub span{font-weight:400;font-size:.85rem;color:var(--muted);margin-left:8px}
+.plist{margin:0;padding-left:18px;display:grid;gap:6px;font-size:.95rem}
+.plist b{color:var(--text);font-weight:600}
