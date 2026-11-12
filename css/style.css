@@ -179,3 +179,15 @@ body .nav.open .links a.active{color:var(--accent)}
 .psub span{font-weight:400;font-size:.85rem;color:var(--muted);margin-left:8px}
 .plist{margin:0;padding-left:18px;display:grid;gap:6px;font-size:.95rem}
 .plist b{color:var(--text);font-weight:600}
+
+/* Problems solved stat */
+.stat.solved{position:relative}
+.solved-btn{all:unset;cursor:pointer;display:block;border-radius:8px}
+.solved-btn:hover b,.solved-btn:focus-visible b{text-decoration:underline;text-underline-offset:4px}
+.solved-btn:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+.solved-btn span::after{content:" \2197"}
+.solved-menu{position:absolute;left:0;top:calc(100% + 10px);z-index:20;min-width:210px;padding:6px;border-radius:12px;border:1px solid var(--line);background:var(--surface);box-shadow:0 10px 30px rgba(0,0,0,.15)}
+.solved-menu[hidden]{display:none}
+.solved-row{display:flex;justify-content:space-between;gap:16px;padding:10px 12px;border-radius:8px;font-size:.9rem}
+.solved-row:hover{background:var(--soft);color:var(--accent)}
+.solved-row b{display:inline;font-size:.9rem;color:var(--accent);font-family:inherit}

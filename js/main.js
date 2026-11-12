@@ -122,6 +122,28 @@
     });
   });
 
+
+  /* Problems solved: edit data-count and the profile links in index.html (#solvedMenu) */
+  (function(){
+    var btn = document.getElementById('solvedBtn'), menu = document.getElementById('solvedMenu'), total = document.getElementById('solvedTotal');
+    if (!btn || !menu) return;
+    var rows = Array.prototype.slice.call(menu.querySelectorAll('.solved-row')), sum = 0;
+    rows = rows.filter(function(r){
+      if (r.getAttribute('href').indexOf('YOUR_') > -1){ r.remove(); return false; }
+      var n = parseInt(r.getAttribute('data-count'), 10) || 0;
+      sum += n; r.querySelector('b').textContent = n; return true;
+    });
+    if (total) total.textContent = sum;
+    function setOpen(o){ menu.hidden = !o; btn.setAttribute('aria-expanded', o ? 'true' : 'false'); }
+    btn.addEventListener('click', function(e){
+      e.stopPropagation();
+      if (rows.length === 1){ window.open(rows[0].href, '_blank', 'noopener'); return; }
+      setOpen(menu.hidden);
+    });
+    document.addEventListener('click', function(e){ if (!menu.hidden && !menu.contains(e.target)) setOpen(false); });
+    document.addEventListener('keydown', function(e){ if (e.key === 'Escape') setOpen(false); });
+  })();
+
   var yr = document.getElementById('yr');
   if (yr) yr.textContent = new Date().getFullYear();
 })();
